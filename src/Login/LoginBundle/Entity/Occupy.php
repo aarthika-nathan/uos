@@ -121,4 +121,19 @@ class Occupy
     {
         return $this->studentno;
     }
+    /**
+     * @var integer
+     */
+    private $indnum;
+
+
+    /**
+     * Get indnum
+     *
+     * @return integer 
+     */
+    public function getIndnum()
+    {
+        return $this->indnum;
+    }
 }
