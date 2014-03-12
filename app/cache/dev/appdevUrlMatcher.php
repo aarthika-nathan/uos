@@ -237,6 +237,21 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Login\\LoginBundle\\Controller\\DefaultController::roomdeleteAction',  '_route' => 'login_login_roomdelete',);
         }
 
+        // login_login_occupyedit
+        if ($pathinfo === '/occupyedit') {
+            return array (  '_controller' => 'Login\\LoginBundle\\Controller\\DefaultController::occupyeditAction',  '_route' => 'login_login_occupyedit',);
+        }
+
+        // login_login_occupyeditf
+        if ($pathinfo === '/occupyeditf') {
+            return array (  '_controller' => 'Login\\LoginBundle\\Controller\\DefaultController::occupyeditfAction',  '_route' => 'login_login_occupyeditf',);
+        }
+
+        // login_login_occupydelete
+        if ($pathinfo === '/occupydelete') {
+            return array (  '_controller' => 'Login\\LoginBundle\\Controller\\DefaultController::occupydeleteAction',  '_route' => 'login_login_occupydelete',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

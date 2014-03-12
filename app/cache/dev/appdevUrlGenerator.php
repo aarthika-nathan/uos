@@ -51,6 +51,9 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         'login_login_roomeditf' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Login\\LoginBundle\\Controller\\DefaultController::roomeditfAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/roomeditf',    ),  ),),
         'login_login_occupyAdd' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Login\\LoginBundle\\Controller\\DefaultController::occupyAddAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/occupyAdd',    ),  ),),
         'login_login_roomdelete' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Login\\LoginBundle\\Controller\\DefaultController::roomdeleteAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/roomdelete',    ),  ),),
+        'login_login_occupyedit' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Login\\LoginBundle\\Controller\\DefaultController::occupyeditAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/occupyedit',    ),  ),),
+        'login_login_occupyeditf' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Login\\LoginBundle\\Controller\\DefaultController::occupyeditfAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/occupyeditf',    ),  ),),
+        'login_login_occupydelete' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Login\\LoginBundle\\Controller\\DefaultController::occupydeleteAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/occupydelete',    ),  ),),
     );
 
     /**

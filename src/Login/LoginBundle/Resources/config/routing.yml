@@ -57,3 +57,15 @@ login_login_occupyAdd:
 login_login_roomdelete:
     pattern:  /roomdelete
     defaults: { _controller: LoginLoginBundle:Default:roomdelete }
+    
+login_login_occupyedit:
+    pattern:  /occupyedit
+    defaults: { _controller: LoginLoginBundle:Default:occupyedit }
+    
+login_login_occupyeditf:
+    pattern:  /occupyeditf
+    defaults: { _controller: LoginLoginBundle:Default:occupyeditf }
+    
+login_login_occupydelete:
+    pattern:  /occupydelete
+    defaults: { _controller: LoginLoginBundle:Default:occupydelete }

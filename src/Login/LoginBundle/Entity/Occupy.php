@@ -136,4 +136,60 @@ class Occupy
     {
         return $this->indnum;
     }
+    /**
+     * @var \DateTime
+     */
+    private $date;
+
+    /**
+     * @var \DateTime
+     */
+    private $lastedit;
+
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Occupy
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set lastedit
+     *
+     * @param \DateTime $lastedit
+     * @return Occupy
+     */
+    public function setLastedit($lastedit)
+    {
+        $this->lastedit = $lastedit;
+    
+        return $this;
+    }
+
+    /**
+     * Get lastedit
+     *
+     * @return \DateTime 
+     */
+    public function getLastedit()
+    {
+        return $this->lastedit;
+    }
 }

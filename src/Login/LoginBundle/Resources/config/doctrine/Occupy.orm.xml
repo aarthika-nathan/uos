@@ -7,5 +7,7 @@
     <field name="studentno" type="string" column="studentNo" length="50" nullable="true"/>
     <field name="hallname" type="string" column="hallName" length="50" nullable="true"/>
     <field name="roomno" type="decimal" column="roomNo" nullable="true"/>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="lastedit" type="date" column="lastedit" nullable="false"/>
   </entity>
 </doctrine-mapping>
