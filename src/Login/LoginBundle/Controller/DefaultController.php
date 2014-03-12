@@ -201,7 +201,7 @@ class DefaultController extends Controller {
 
             if ($room) {
                 return $this->render('LoginLoginBundle:Default:roomeditf.html.twig', array('indnum' => $room->getIndnum(), 'roomno' => $room->getRoomno(), 'hallname' => $room->getHallname(), 'type' => $room->getType(), 'cost' => $room->getMonthlycost()));
-            }else {
+            } else {
                 return $this->render('LoginLoginBundle:Default:uos.html.twig', array('name' => 'Login Error'));
             }
         }
@@ -336,7 +336,7 @@ class DefaultController extends Controller {
             }
             $em->flush();
         }
-         return $this->render('LoginLoginBundle:Default:login.html.twig', array('name' => $indnum));
+        return $this->render('LoginLoginBundle:Default:login.html.twig', array('name' => $indnum));
     }
 
     public function occupyAddAction(Request $request) {
@@ -353,6 +353,78 @@ class DefaultController extends Controller {
             $em->flush();
         }
         return $this->render('LoginLoginBundle:Default:occupyAdd.html.twig');
+    }
+
+    public function occupyeditAction(Request $request) {
+        if ($request->getMethod() == 'POST') {
+            $studentno = $request->get('studno');
+
+            $em = $this->getDoctrine()->getEntityManager();
+            $repository = $em->getRepository('LoginLoginBundle:Occupy');
+
+
+
+            $occupy = $repository->findOneBy(array('studentno' => $studentno));
+            if ($occupy) {
+                return $this->render('LoginLoginBundle:Default:occupyeditf.html.twig', array('indnum' => $occupy->getIndnum(), 'studno' => $studentno, 'hallname' => $occupy->getHallname(), 'roomno' => $occupy->getRoomno(), 'date' => $occupy->getDate(), 'lastedit' => $occupy->getLastedit()));
+            } else {
+                return $this->render('LoginLoginBundle:Default:uos.html.twig', array('name' => 'Login Error'));
+            }
+        }
+        return $this->render('LoginLoginBundle:Default:occupyedit.html.twig');
+    }
+
+    public function occupyeditfAction(Request $request) {
+        if ($request->getMethod() == 'POST') {
+            $indnum = $request->get('indnum');
+            $hallname = $request->get('hallname');
+            $roomno = $request->get('roomno');
+
+            $em = $this->getDoctrine()->getManager();
+            $occupy = $em->getRepository('LoginLoginBundle:Occupy')->find($indnum);
+
+            if ($hallname != null) {
+                $occupy->setHallname($hallname);
+            }
+            if ($roomno != null) {
+                $occupy->setRoomno($roomno);
+            }
+            $date = DateTime::createFromFormat('j-M-Y', '15-Feb-2009');
+            $date->format('Y-m-d');
+            $occupy->setDate($date);
+            
+            $lastedit = DateTime::createFromFormat('j-M-Y', '15-Feb-2009');
+            $lastedit->format('Y-m-d');            
+            $occupy->setLastedit($lastedit);
+            
+
+            $occupy->setLastedit($lastedit);
+
+            $em->flush();
+        }
+        return $this->render('LoginLoginBundle:Default:login.html.twig', array('name' => $indnum));
+    }
+
+    public function occupydeleteAction(Request $request) {
+        if ($request->getMethod() == 'POST') {
+            $studentno = $request->get('studno');
+
+            $em = $this->getDoctrine()->getEntityManager();
+            $repository = $em->getRepository('LoginLoginBundle:Occupy');
+
+            $occupy = $repository->findOneBy(array('studentno' => $studentno));
+            if ($occupy) {
+
+                $occupy0 = $repository->find($occupy->getIndnum());
+                $em->remove($occupyO);
+                $em->flush();
+
+                return $this->render('LoginLoginBundle:Default:occupydelete.html.twig');
+            } else {
+                return $this->render('LoginLoginBundle:Default:uos.html.twig', array('name' => 'Login Error'));
+            }
+        }
+        return $this->render('LoginLoginBundle:Default:occupydelete.html.twig');
     }
 
 }
